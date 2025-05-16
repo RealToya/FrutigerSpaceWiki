@@ -222,12 +222,6 @@ body {
     transition: filter 0.2s ease;
 }
 
-
-.link-official-website span::before {
-    background-image: url('https://cdn-icons-png.flaticon.com/512/6313/6313799.png');
-    filter: invert(15%) sepia(90%) saturate(600%) hue-rotate(190deg) brightness(80%) drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
-}
-
 .link-game-forums span::before {
     background-image: url('https://preview.redd.it/o3wqv82oqup91.png?width=640&crop=smart&auto=webp&s=97042484fc702181acddf03ad61b042e79cfb86f');
     filter: invert(15%) sepia(90%) saturate(600%) hue-rotate(190deg) brightness(80%) drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
