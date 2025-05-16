@@ -1,19 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {  
+
     // 1. Subtle Parallax Scrolling Background
-    const body = document.querySelector('body');
-    let scrollTimeout;
 
     function updateBackgroundPosition() {
-        const scrollY = window.scrollY;
-        // Adjust the divisor for the parallax effect.  Higher = slower movement.
-        body.style.backgroundPositionY = `${scrollY / 3}px`;
+    const scrollY = window.scrollY;
+    const backgroundImg = document.querySelector(".background-area img"); /* The update time here is essencial, no need for delays <-- Edited By Toya */
+
+        backgroundImg.style.transform = `translateY(${scrollY / 8}px)`; /* You can use the css transitions to make it easy to do some effects <-- Edited By Toya */
     }
 
-    window.addEventListener('scroll', () => {
-        // Debounce to prevent excessive updates.
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateBackgroundPosition, 10); // 10ms delay
-    });
+    window.addEventListener("scroll", updateBackgroundPosition);
 
     // 2. "Glassy" Element Hover Effects
     const glassElements = document.querySelectorAll('.topic-folder, .sidebar-box, .ko-fi-button, .box'); // Add more selectors as needed

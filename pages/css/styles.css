@@ -1,11 +1,6 @@
 /* General Body and Container Styles */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-image: url('../../assets/asadal_stock_13.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
     color: #333;
     margin: 0;
     display: flex;
@@ -14,6 +9,26 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.background-area { /* <---- When in doubt, dont trust the body, make a div - Edited by Toya*/ 
+    position: fixed;
+    scale: 1.1; /* Gives wiggle room for the parallax effect */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.background-area img { /* <---- Made the image inside independent for the parallax effect - Edited by Toya*/ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    transform: translateY(0); /* <---- Also using the transitions features to do the animation - Edited by Toya*/ 
+    transition: transform 0.08s linear;
 }
 
 .container {
@@ -32,6 +47,7 @@ body {
 /* Header and Topic Bar Styles */
 .header {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
@@ -52,10 +68,20 @@ body {
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
 }
 
+.topic-controller {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: -76px;
+}
+
 .topics-bar {
     display: flex;
+    position: absolute;
     gap: 20px;
-
 }
 
 .topic-folder {
