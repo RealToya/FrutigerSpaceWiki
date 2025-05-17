@@ -1,3 +1,7 @@
 *.gitattributes linguist-language=gitattributes
 *.gitattributes linguist-detectable=true
 *.gitattributes linguist-documentation=false
+
+*.html linguist-detectable=true
+*.js linguist-detectable=true
+*.css linguist-detectable=true
