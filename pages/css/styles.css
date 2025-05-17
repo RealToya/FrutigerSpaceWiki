@@ -13,7 +13,7 @@ body {
 
 .background-area { /* <---- When in doubt, dont trust the body, make a div - Edited by Toya*/ 
     position: fixed;
-    scale: 1.1; /* Gives wiggle room for the parallax effect */
+    scale: 1.1; /* Gives wiggle room for the parallax effect - Edited by Toya */
     top: 0;
     left: 0;
     width: 100vw;
@@ -38,13 +38,24 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
+.retro-tooltip { /* <---- Made the style of the tooltips already cuz why not - Edited by Toya */
+    position: absolute;
+    backdrop-filter:  blur(4px);
+    color: #000000;
+    padding: 6px 4px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-family: monospace;
+}
+
 /* Header and Topic Bar Styles */
+
 .header {
     display: flex;
     position: relative;
@@ -55,6 +66,18 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 20px 20px 0 0;
     box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clock-display
+{
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9em;
+    color: #004d80;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .logo-area {
@@ -166,6 +189,7 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.6);
+    
 }
 
 .sidebar-box h3 {
@@ -201,6 +225,7 @@ body {
 }
 
 /* Styling for the icons next to links */
+
 .sidebar-box ul li a span {
     position: relative;
     padding-left: 25px;
@@ -243,6 +268,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 .ko-fi-logo {
@@ -285,6 +311,7 @@ body {
 }
 
 .box {
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     padding: 25px;
@@ -345,6 +372,37 @@ body {
     left: 0;
 }
 
+/* Dev Showcase Styles */
+
+.web-devs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+}
+
+.dev-card {
+    position: relative;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dev-preview {    
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
 /* Footer Styles */
 .footer {
     padding: 15px;
@@ -368,4 +426,24 @@ a {
 a:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+/* Defined Animations and Effects */
+
+.shine {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.shine.animate {
+    transform: scale(2);
+    opacity: 1;
 }
