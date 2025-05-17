@@ -171,7 +171,7 @@ body {
     display: flex;
     padding: 20px;
     gap: 20px;
-    flex-grow: 1;
+    flex-grow: 5;
 }
 
 .left-sidebar {
@@ -332,6 +332,7 @@ body {
 .main-summary p {
     line-height: 1.6;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 .contributors-donators-grid {
@@ -393,14 +394,19 @@ body {
     backdrop-filter: blur(4px);
     border-radius: 5px;
     overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    border: 1px solid rgb(255, 255, 255, 0);
 }
 
-.dev-preview {    
+.dev-preview img {    
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
+    object-fit: cover;
+    border-radius: 15px 15px 4px 4px;
+}
+
+.dev-card:hover {
+    transform: scale(1.05);
 }
 
 /* Footer Styles */
