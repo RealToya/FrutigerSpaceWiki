@@ -1,0 +1,6 @@
+pages/css/*.css linguist-vendored=false 
+pages/js/*.js linguist-vendored=false
+
+*.css linguist-language= CSS
+*.js linguist-language= JavaScript
+*.html linguist-language= HTML
