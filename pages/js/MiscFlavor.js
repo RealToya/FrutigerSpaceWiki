@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollY = window.scrollY;
     const backgroundImg = document.querySelector(".background-area img"); /* The update time here is essencial, no need for delays <-- Edited By Toya */
 
-        backgroundImg.style.transform = `translateY(${scrollY / 8}px)`; /* You can use the css transitions to make it easy to do some effects <-- Edited By Toya */
+        backgroundImg.style.transform = `translateY(${scrollY * 0.7}px)`; /* You can use the css transitions to make it easy to do some effects <-- Edited By Toya */
     }
 
     window.addEventListener("scroll", updateBackgroundPosition);

@@ -6,8 +6,17 @@
     <description>#</description>
     <language>en-us</language>
     <lastBuildDate>#</lastBuildDate>
-
-    <item>
-    </item>
+  <item>
+  <title>
+    <![CDATA[Test Update News ]]>
+  </title>
+  <description>
+    <![CDATA[A Update that doesnt exist is here]]>
+  </description>
+  <link>https://www.youtube.com/watch?v=dQw4w9WgXcQ</link>
+  <guid isPermaLink="false">https://www.youtube.com/watch?v=dQw4w9WgXcQ#0</guid>
+  <pubDate>Sat, 1 Jan 2025 00:00:00 GMT</pubDate>
+  <media:thumbnail width="256" height="128" url="https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8869/live/124e1230-3879-11f0-af52-6daeecfc60cc.jpg"/>
+</item>
   </channel>
 </rss>

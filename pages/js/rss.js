@@ -1,8 +1,10 @@
-// pages/js/rssFeed.js
+/* Anything regarding the RSS feed needs to be maintained here */
+
 document.addEventListener('DOMContentLoaded', () => {
     const rssFeedContainer = document.getElementById('rss-feed-container');
     // New RSS feed URL for testing
-    const rssUrl = 'http://feeds.bbci.co.uk/news/rss.xml'; // <--- Change this line
+
+    const rssUrl = 'https://frutigerspace.wiki/rss.xml'; // <--- Change this line
     const rssToJsonApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
     fetch(rssToJsonApi)

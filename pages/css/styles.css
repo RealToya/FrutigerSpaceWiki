@@ -1,4 +1,8 @@
 /* General Body and Container Styles */
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #333;
@@ -12,21 +16,21 @@ body {
 }
 
 .background-area {
-    position: fixed; /* Stays fixed in the viewport */
+    position: absolute; /* You DO NOT fix this div, it needs to scroll, not the img <-- Edited By Toya*/
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     z-index: -1;
-    overflow: hidden; /* Ensures image doesn't go outside this fixed area */
 }
 
-.background-area img {
-    width: 100%; /* Make image fill its parent (.background-area) */
-    height: 100%; /* Make image fill its parent (.background-area) */
-    object-fit: cover; /* Ensure it covers the area without distorting */
-    z-index: -1; /* <--- ADDED THIS LINE: Place image behind the canvas */
-    position: absolute; /* Needed for z-index to work */
+.background-area img { /* The img is not modified, its contained, you dont modify the img for the effect, you do the that to the parent <-- Edited By Toya*/
+    position: absolute;
+    width: 100%; 
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 /* Canvas specific styles */
@@ -43,12 +47,14 @@ body {
 
 .container {
     width: 90%;
+    height: 100%;
     max-width: 1200px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     backdrop-filter: blur(8px);
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     overflow: hidden;
 }
@@ -179,17 +185,19 @@ body {
 /* Main Content Area */
 .main-content {
     display: flex;
+    flex: 1;
+    height: 100%;
     padding: 20px;
-    gap: 20px;
-    flex-grow: 5;
     align-items: stretch; /* Explicitly ensure children stretch to same height */
+    gap: 20px; /* Control gap of content inside in this property <-- Edited By Toya */
 }
 
 .left-sidebar {
+    height: 100%;
     flex: 0 0 250px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: inherit;
 }
 
 .sidebar-box {
@@ -316,9 +324,10 @@ body {
 
 .content-area {
     flex: 1;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: inherit;
 }
 
 .box {
@@ -472,9 +481,7 @@ a:hover {
     padding: 25px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.6);
-    margin-top: 20px; /* Add some space above it */
 }
 
 .rss-feed-box h3 {
