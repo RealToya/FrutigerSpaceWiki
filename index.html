@@ -107,6 +107,81 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
     
+    .discord-section {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .discord-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    
+    .discord-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 51%,
+        rgba(255, 255, 255, 0.05) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 3px;
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      backdrop-filter: blur(2px);
+      transition: all 0.15s ease;
+      box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    
+    .discord-link::before {
+      display: none;
+    }
+    
+    .discord-link:hover {
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.2) 51%,
+        rgba(255, 255, 255, 0.15) 100%);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 
+        0 1px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .discord-link:active {
+      background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.4) 51%,
+        rgba(255, 255, 255, 0.5) 100%);
+      box-shadow: 
+        inset 0 1px 3px rgba(0, 0, 0, 0.2),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+      transform: translateY(1px);
+    }
+    
+    .steam-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    
     .simple-bubble {
       position: absolute;
       border-radius: 50%;
@@ -153,9 +228,23 @@
         <span class="bubble-dot"></span>
         <span class="bubble-dot"></span>
       </span>
-      FrutigerSpace Wiki
+       FrutigerSpace Wiki
     </h1>
     <p>This site is currently undergoing maintenance.<br>We'll be back soon with maximum Aero gloss ✨</p>
+    
+    <div class="discord-section">
+      <p style="font-size: 1rem; margin-bottom: 0;">Stay updated and connect with the community:</p>
+      <div class="discord-links">
+        <a href="https://discord.gg/DA9ymrbdF3" class="discord-link">📡 Main Discord</a>
+        <a href="https://discord.gg/SdwdygUEzx" class="discord-link">🌌 FrutigerSpace Discord</a>
+      </div>
+      <div class="discord-links" style="margin-top: 12px;">
+        <a href="https://store.steampowered.com/app/3591510/Frutiger_Space/" class="discord-link">
+          <img src="assets/images/steam.webp" alt="Steam" class="steam-icon">
+          Wishlist on Steam
+        </a>
+      </div>
+    </div>
   </div>
   
   <script>
