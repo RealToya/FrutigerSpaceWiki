@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutiger Space Wiki - Background Settings</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="icon" href="assets/FrutigerWikiLogo.png" type="image/x-icon">
+</head>
+<body>
+<div class="background-area">
+    <img src="assets/asadal_stock_13.jpg" alt="backgroundimage">
+</div>
+<div class="container">
+    <div class="header">
+        <div class="logo-area">
+            <img src="assets/FrutigerWikiLogo.png" alt="Frutiger Space Logo" class="wiki-logo">
+        </div>
+        <div class="topic-controller">
+            <div class="topics-bar">
+                <div class="topic-folder">
+                    <span>Main Game</span>
+                    <div class="sub-topics">
+                        <a href="index.html">Main Page</a>
+                    </div>
+                </div>
+                <div class="topic-folder">
+                    <span>News</span>
+                    <div class="sub-topics">
+                        <a href="#">placeholder</a>
+                    </div>
+                </div>
+                <div class="topic-folder">
+                    <span>Community</span>
+                    <div class="sub-topics">
+                        <a href="#">placeholder</a>
+                    </div>
+                </div>
+                <div class="topic-folder">
+                    <span>Info</span>
+                    <div class="sub-topics">
+                        <a href="about-us.html">About us</a>
+                    </div>
+                </div>
+                <div class="topic-folder">
+                    <span>Preferences</span>
+                    <div class="sub-topics">
+                        <a href="themes.html">Background</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="main-content">
+        <div class="content-area">
+            <div class="themes-container box">
+                <section class="theme-section">
+                    <h2>Background Image</h2>                    <div class="background-upload">
+                        <input type="file" id="bgImageUpload" accept="image/*" style="display: none">
+                        <div class="button-group">
+                            <label for="bgImageUpload" class="upload-button">Change Background Image</label>
+                            <button id="resetBackground" class="reset-button">Reset to Default</button>
+                        </div>
+                        <p class="upload-info">Choose an image from your device to set as the background for all wiki pages. 
+                            The image will be saved in your browser's local storage.</p>
+                        <div class="preview-section">
+                            <h3>Current Background</h3>
+                            <div class="current-bg-preview"></div>
+                        </div>
+                    </div>
+                </section>
+                <div class="cache-notice">
+                    <p>Your background image is saved to your browser's local storage and will be remembered the next time you visit.</p>
+                    <p>For best results, use images in landscape orientation with a width of at least 1920 pixels.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Frutiger Space Wiki 2025™</p>
+    </div>
+</div>
+
+<script type="text/javascript" src='javascript/LocalTimer.js'></script>
+<script type="text/javascript" src='javascript/MiscFlavor.js'></script>
+<script type="text/javascript" src='javascript/background-manager.js'></script>
+</body>
+</html>
