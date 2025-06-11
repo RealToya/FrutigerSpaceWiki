@@ -1,0 +1,349 @@
+/* General Body and Container Styles */
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #004d80; /* Dark blue text for light background */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.background-area {
+    position: absolute; /* You DO NOT fix this div, it needs to scroll, not the img <-- Edited By Toya*/
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    z-index: -1;
+}
+
+.background-area img { /* The img is not modified, its contained, you dont modify the img for the effect, you do the that to the parent <-- Edited By Toya*/
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Canvas specific styles */
+#frutigerCanvas {
+    position: absolute; /* Position over the image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place it above the image but still behind content */
+    pointer-events: none; /* Allows clicks to pass through to elements below */
+}
+
+
+.container {
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.7); /* Light, translucent background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* --- HEADER AND TOPIC BAR STYLES (BLUE THEME) --- */
+.header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, #b3e6ff, #80dfff); /* Glossy blue gradient */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px 20px 0 0;
+    box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clock-display {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9em;
+    color: #004d80;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.wiki-logo {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.topic-controller {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: -76px;
+}
+
+.topics-bar {
+    display: flex;
+    position: absolute;
+    gap: 20px;
+}
+
+.topic-folder {
+    position: relative;
+    background: linear-gradient(180deg, #cceeff, #99ddff);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px 15px 0 0;
+    padding: 10px 50px;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1) inset;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    z-index: 10;
+}
+
+.topic-folder span {
+    font-weight: bold;
+    color: #004d80;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.topic-folder:hover {
+    background: linear-gradient(180deg, #e6f7ff, #cceeff);
+    transform: translateY(-3px);
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sub-topics {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px;
+    text-align: left;
+    z-index: 9;
+}
+
+.topic-folder:hover .sub-topics {
+    display: block;
+}
+
+.sub-topics a {
+    display: block;
+    color: #0056b3;
+    padding: 5px 0;
+    text-decoration: none;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.sub-topics a:hover {
+    color: #007bff;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Main Content Area */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Column layout for stacking sections */
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    gap: 20px;
+    overflow-y: auto; /* Allow content to scroll */
+}
+
+/* --- SITE INFO & MEET THE TEAM STYLES --- */
+.site-info-section, .meet-the-team {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.site-info-section h2, .meet-the-team h2 {
+    color: #004d80;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.site-info-section p {
+    line-height: 1.7;
+    text-align: center;
+    font-size: 1.1em;
+    color: #336791;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    padding-top: 10px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+/* --- WINDOWS VISTA PFP BORDER STYLE --- */
+.team-avatar {
+    position: relative;
+    display: inline-block;
+    padding: 7px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #e4effa, #b6d1e8);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.team-avatar::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    border-radius: 11px 11px 0 0;
+    pointer-events: none;
+}
+
+.team-avatar img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #7c94a9;
+    position: relative;
+}
+
+
+.team-info .team-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #00437a;
+    margin: 0;
+}
+
+.team-info .team-role {
+    font-size: 0.9em;
+    color: #5a8bb1;
+    margin-top: 4px;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 15px;
+    background: linear-gradient(180deg, #80dfff, #b3e6ff); /* Flipped gradient */
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    color: #004d80;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* General Link Styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* General Box Styling (can be used for other content) */
+.box {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Footer Styles */
+.footer {
+    padding: 15px;
+    background: linear-gradient(180deg, #80dfff, #b3e6ff);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    color: #004d80;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 3px 8px rgb(128, 223, 255);
+}
+
+.updates-section {
+    background: #f0f7ff;
+    color: #1b1a1a;
+}
+
+.updates-section h2 {
+    background: #80dfff;
+    color: #fff;
+    padding: 10px;
+    margin: -25px -25px 15px -25px; /* Extend to edges of the box */
+    border-radius: 15px 15px 0 0;
+}
+
+.updates-section p {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.updates-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.updates-section ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.updates-section .update-date {
+    font-weight: bold;
+    color: #007bff;
+}

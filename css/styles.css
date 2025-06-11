@@ -26,7 +26,7 @@ body {
 
 .background-area img { /* The img is not modified, its contained, you dont modify the img for the effect, you do the that to the parent <-- Edited By Toya*/
     position: absolute;
-    width: 100%; 
+    width: 100%;
     height: auto;
     top: 0;
     left: 0;
@@ -57,6 +57,7 @@ body {
     flex-grow: 1;
     flex-direction: column;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .retro-tooltip {
@@ -540,4 +541,39 @@ a:hover {
     text-align: center;
     font-style: italic;
     color: #888;
+}
+
+.updates-section {
+    background: #f0f7ff;
+    color: #333;
+}
+
+.updates-section h2 {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    margin: -25px -25px 15px -25px; /* Extend to edges of the box */
+    border-radius: 15px 15px 0 0;
+}
+
+.updates-section p {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.updates-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.updates-section ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.updates-section .update-date {
+    font-weight: bold;
+    color: #007bff;
 }
